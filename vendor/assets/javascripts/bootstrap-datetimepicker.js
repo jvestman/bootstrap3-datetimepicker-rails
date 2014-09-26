@@ -623,6 +623,16 @@ THE SOFTWARE.
             timeComponents.filter('[data-time-component=hours]').text(padLeft(hour));
             timeComponents.filter('[data-time-component=minutes]').text(padLeft(picker.date.minutes()));
             timeComponents.filter('[data-time-component=seconds]').text(padLeft(picker.date.second()));
+
+            picker.widget.find('.timepicker .timepicker-hours td.hour').removeClass('active');
+            picker.widget.find('.timepicker .timepicker-hours td.hour').filter(function(){
+                return $(this).text() === picker.date.hours().toString();
+            }).addClass('active');
+
+            picker.widget.find('.timepicker .timepicker-minutes td.minute').removeClass('active');
+            picker.widget.find('.timepicker .timepicker-minutes td.minute').filter(function(){
+                return $(this).text() === picker.date.minutes().toString();
+            }).addClass('active');
         },
 
         click = function (e) {
