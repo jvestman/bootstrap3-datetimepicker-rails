@@ -626,12 +626,12 @@ THE SOFTWARE.
 
             picker.widget.find('.timepicker .timepicker-hours td.hour').removeClass('active');
             picker.widget.find('.timepicker .timepicker-hours td.hour').filter(function(){
-                return $(this).text() === picker.date.hours().toString();
+                return parseInt( $(this).text() ) === picker.date.hours();
             }).addClass('active');
 
             picker.widget.find('.timepicker .timepicker-minutes td.minute').removeClass('active');
             picker.widget.find('.timepicker .timepicker-minutes td.minute').filter(function(){
-                return $(this).text() === picker.date.minutes().toString();
+                return parseInt( $(this).text() ) === picker.date.minutes();
             }).addClass('active');
         },
 
